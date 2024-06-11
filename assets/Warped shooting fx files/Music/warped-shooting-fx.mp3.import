@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgbjcr1x2odxl"
+path="res://.godot/imported/warped-shooting-fx.mp3-70c1afcf1b54dd0a227486a57dd31025.mp3str"
+
+[deps]
+
+source_file="res://assets/Warped shooting fx files/Music/warped-shooting-fx.mp3"
+dest_files=["res://.godot/imported/warped-shooting-fx.mp3-70c1afcf1b54dd0a227486a57dd31025.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
