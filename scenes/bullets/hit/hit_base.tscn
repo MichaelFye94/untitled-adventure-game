@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bicvt2tmlaj77"]
+
+[ext_resource type="Script" uid="uid://djvqgonqyarki" path="res://scenes/bullets/hit/hit_base.gd" id="1_fxwy1"]
+
+[node name="HitBase" type="AnimatedSprite2D"]
+script = ExtResource("1_fxwy1")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

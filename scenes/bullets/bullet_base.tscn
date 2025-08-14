@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwd1vm6ubgj2e"]
+
+[ext_resource type="Texture2D" uid="uid://dujkyn3348bri" path="res://assets/Warped shooting fx files/Pixelart/Pulse/frames/pulse1.png" id="1_o7w6r"]
+[ext_resource type="Script" uid="uid://dvnplox02do7r" path="res://scenes/bullets/bullet_base.gd" id="1_pt263"]
+[ext_resource type="Texture2D" uid="uid://boudt8vr027af" path="res://assets/Warped shooting fx files/Pixelart/Pulse/frames/pulse2.png" id="2_8f38k"]
+[ext_resource type="Texture2D" uid="uid://da5hgvr81brer" path="res://assets/Warped shooting fx files/Pixelart/Pulse/frames/pulse3.png" id="3_xiyk3"]
+[ext_resource type="Texture2D" uid="uid://c75p3c06sq8l6" path="res://assets/Warped shooting fx files/Pixelart/Pulse/frames/pulse4.png" id="4_1d43y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3smj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o7w6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8f38k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xiyk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1d43y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fw31n"]
+radius = 3.0
+height = 6.0
+
+[node name="BulletBase" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_pt263")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_i3smj")
+autoplay = "default"
+frame_progress = 0.946132
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fw31n")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(3.04, -0.578497)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

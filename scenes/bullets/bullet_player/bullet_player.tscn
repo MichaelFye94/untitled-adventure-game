@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfhnpld5u3dn7"]
+
+[ext_resource type="PackedScene" uid="uid://dwd1vm6ubgj2e" path="res://scenes/bullets/bullet_base.tscn" id="1_q0yag"]
+[ext_resource type="PackedScene" uid="uid://v5o657olmwtj" path="res://scenes/bullets/hit/bullets/player_bullet_hit.tscn" id="2_783s4"]
+
+[node name="BulletPlayer" instance=ExtResource("1_q0yag")]
+collision_layer = 8
+collision_mask = 5
+explosion = ExtResource("2_783s4")
+can_break_blocks = true
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

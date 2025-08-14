@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://v5o657olmwtj"]
+
+[ext_resource type="PackedScene" uid="uid://bicvt2tmlaj77" path="res://scenes/bullets/hit/hit_base.tscn" id="1_iivvo"]
+[ext_resource type="Texture2D" uid="uid://cr253rfptkhlr" path="res://assets/Warped shooting fx files/Pixelart/hits/Hits-6/frames/hits-6-preview1.png" id="2_b40vc"]
+[ext_resource type="Texture2D" uid="uid://dcg405cgyk474" path="res://assets/Warped shooting fx files/Pixelart/hits/Hits-6/frames/hits-6-preview2.png" id="3_jdqgh"]
+[ext_resource type="Texture2D" uid="uid://c02rqjfehe1rj" path="res://assets/Warped shooting fx files/Pixelart/hits/Hits-6/frames/hits-6-preview3.png" id="4_o5ffx"]
+[ext_resource type="Texture2D" uid="uid://c1a1sbfddaspg" path="res://assets/Warped shooting fx files/Pixelart/hits/Hits-6/frames/hits-6-preview4.png" id="5_8l3ca"]
+[ext_resource type="Texture2D" uid="uid://1h5cfvsqpyuc" path="res://assets/Warped shooting fx files/Pixelart/hits/Hits-6/frames/hits-6-preview5.png" id="6_2g4f0"]
+[ext_resource type="Texture2D" uid="uid://4fe6swn2ldcp" path="res://assets/Warped shooting fx files/Pixelart/hits/Hits-6/frames/hits-6-preview6.png" id="7_12nqu"]
+[ext_resource type="Texture2D" uid="uid://co3aflleavydm" path="res://assets/Warped shooting fx files/Pixelart/hits/Hits-6/frames/hits-6-preview7.png" id="8_wx42l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3loi7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b40vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jdqgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o5ffx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8l3ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2g4f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_12nqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wx42l")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="PlayerBulletHit" instance=ExtResource("1_iivvo")]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_3loi7")
+autoplay = "default"

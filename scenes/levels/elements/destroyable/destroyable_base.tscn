@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://lgcq72m4rd8w"]
+
+[ext_resource type="TileSet" uid="uid://bfqs4v17youi" path="res://scenes/levels/tile_map.tres" id="1_kpmuf"]
+[ext_resource type="Script" uid="uid://n2y312up5xi0" path="res://scenes/levels/elements/destroyable/destroyable_base.gd" id="1_ody1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sttyl"]
+size = Vector2(16, 48)
+
+[node name="DestroyableBase" type="Area2D"]
+position = Vector2(-8, 24)
+collision_mask = 8
+script = ExtResource("1_ody1w")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_kpmuf")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131072, 1, 11, -65536, 1, 13, -196608, 1, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -24)
+shape = SubResource("RectangleShape2D_sttyl")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

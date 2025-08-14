@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbsifmrmml0bh"]
+
+[ext_resource type="Script" uid="uid://b6jxw5ebn2x5x" path="res://scenes/game.gd" id="1_i5vl2"]
+[ext_resource type="PackedScene" uid="uid://b58cpgtlvuing" path="res://scenes/test.tscn" id="2_vgmh3"]
+[ext_resource type="PackedScene" uid="uid://lii2qnkpve7a" path="res://scenes/actors/player/player.tscn" id="3_5cbnq"]
+[ext_resource type="PackedScene" uid="uid://tjth2624ecuv" path="res://scenes/ui/inventory/inventory.tscn" id="4_blw64"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_i5vl2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("4_blw64")]
+z_index = 2
+
+[node name="Levels" type="Node" parent="."]
+
+[node name="Test" parent="Levels" instance=ExtResource("2_vgmh3")]
+
+[node name="Player" parent="." instance=ExtResource("3_5cbnq")]
+position = Vector2(0, 40)

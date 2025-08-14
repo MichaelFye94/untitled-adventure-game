@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm1hym7ohc3mh"]
+
+[ext_resource type="Texture2D" uid="uid://cgvmb81p4bjcb" path="res://assets/attack/Attack_Crescent1.png" id="1_kgoqd"]
+[ext_resource type="Script" uid="uid://ck5i4f315agu5" path="res://scenes/actors/player/weapons/attack_melee_base.gd" id="1_sir5f"]
+[ext_resource type="Texture2D" uid="uid://716ai7bbyucb" path="res://assets/attack/Attack_Crescent2.png" id="2_sojoq"]
+[ext_resource type="Texture2D" uid="uid://dikl7etsyefif" path="res://assets/attack/Attack_Crescent3.png" id="3_xyrht"]
+[ext_resource type="Texture2D" uid="uid://bb33hqd7ewhvb" path="res://assets/attack/Attack_Crescent4.png" id="4_hd0ww"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ofuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kgoqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sojoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xyrht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hd0ww")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="AttackMeleeBase" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_sir5f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0ofuy")
+autoplay = "default"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-5, -15)
+polygon = PackedVector2Array(-1, -1, 2, -2, 10, -2, 17, 2, 20, 5, 23, 11, 23, 19, 19, 26, 16, 29, 10, 32, 2, 32, -1, 31)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
